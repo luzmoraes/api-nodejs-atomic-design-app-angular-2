@@ -2,13 +2,12 @@
 
 const fs = require('fs');
 const path = require('path');
+const MODULES_PATH = './modules/';
 
-function getDirectories(srcpath) {
+function getModules(srcpath) {
   return fs.readdirSync(srcpath).filter(function(file) {
     return fs.statSync(path.join(srcpath, file)).isDirectory();
   });
-}
+};
 
-const modules = getDirectories('./modules/');
-
-module.exports = modules;
+module.exports = getModules(MODULES_PATH);
