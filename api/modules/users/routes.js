@@ -15,7 +15,7 @@ router.get('/:id', (req, res, next) => {
   Controller.findOne(req, res);
 });
 // Update
-router.put('/update/:id', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   Controller.update(req, res);
 });
 // Delete
