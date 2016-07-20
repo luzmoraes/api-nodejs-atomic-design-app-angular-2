@@ -3,7 +3,7 @@ module.exports = (Organism) => {
   return (req, res) => {
     const dados = req.body;
     const model = new Organism(dados);
-
+    
     model.save( (err, data) => callback(err, data, res));
   };
 }

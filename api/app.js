@@ -5,14 +5,18 @@ const db = require('./_config/db');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const compress = require('compression');
+const favicon = require('serve-favicon');
 const port = process.env.PORT || 7200;
 
 const environment = process.env.NODE_ENV;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(cors());
 app.use(compress());            // Compress response data with gzip
+app.use(favicon(__dirname + '/favicon.ico'));
 
 // let api = {};
 // api.users = require('./modules/users/routes');

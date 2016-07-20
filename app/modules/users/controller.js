@@ -20,8 +20,8 @@
 					return false;
 				})
 				.error((err) => {
+					console.log('rireto no erro:', err);
 					alert('Erro ao cadastrar o usuário!');
-					console.log(err);
 					return false;
 				});
 			}
