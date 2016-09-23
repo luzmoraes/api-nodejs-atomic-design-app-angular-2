@@ -5,5 +5,5 @@ module.exports = (value) => {
   let isString = require('./isString')(value);
   if(isEmpty) return false;
   if(!isString) return false;
-  return value.length > 3;
+   return (value.length > 3 && value.length < 80);
 }

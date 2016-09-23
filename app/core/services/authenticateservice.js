@@ -4,16 +4,21 @@
 	angular.module('app.core')
 	.factory('AuthenticateService', AuthenticateService);
 
-	function AuthenticateService(){
-		const services = {
-			Login
-		  , SetCredentials
-		  , ClearCredentials
-		};
+	function AuthenticateService($http){
+
+		const _URI = 'http://localhost:7200'
+		    , services = {
+							Login
+		  			, SetCredentials
+		  			, ClearCredentials
+					}
+				;
 
 		return services;
 
-		function Login(){}
+		function Login(data){
+			return $http.post(_URI+'/api/auth/login', user);
+		}
 
 		function SetCredentials(callback){
 			return callback({

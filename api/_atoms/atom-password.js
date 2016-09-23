@@ -1,7 +1,9 @@
-const Atom = {
-	type: String
-  , validate: require('./../_hadrons/passwordMongooseValidade')
-  , required: true
-}
+'use strict'
 
-module.exports = Atom;
+const AtomName = 'Password'
+
+module.exports = {
+	type: String
+  , validate: require('./../_hadrons/'+AtomName.toLowerCase()+'MongooseValidade')
+  // , required: true
+}

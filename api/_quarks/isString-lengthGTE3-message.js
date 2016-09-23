@@ -1,2 +1,1 @@
-
-module.exports = 'Nome {VALUE} precisa ser uma STRING com mais de 3 caracteres!';
+module.exports = 'O nome {VALUE} precisa ter tamanho maior que 3 e menor que 80!';
