@@ -1,5 +1,5 @@
 const FacebookStrategy = require('passport-facebook').Strategy;
-const configAuth = require('../modules/User/atomic/hadrons/hadron-authPassport');
+const configAuth = require('../_hadrons/passwordAuthPassport');
 const facebookStrategy = {
   //pull in our app id and secret from our auth.js file
   clientID        : configAuth.facebookAuth.clientID,

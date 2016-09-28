@@ -10,7 +10,7 @@ module.exports = (DNA) => {
 	const Organism = mongoose.model(organismName, Molecule);
 
 	let Cell = {};
-	const Organelles = ['create', 'find', 'findOne', 'update', 'remove'];
+	const Organelles = ['create', 'find', 'findOne', 'findById', 'findByIdParam' ,'update', 'remove'];
 
 	DNA.organelles.forEach((element, index) => Organelles.push(element));
 
@@ -19,6 +19,5 @@ module.exports = (DNA) => {
 	};
 
 	Organelles.forEach(createOrganelles);
-
 	return Cell;
 }

@@ -1,5 +1,4 @@
-const bcrypt = require('bcrypt')
-
-module.exports = (password, local) => {
-  return bcrypt.compareSync(password, local.password)
+module.exports = (password, user) => {
+  const pw = require('./toEncryp')(password);
+  return (pw == user.auth.local.password);
 };

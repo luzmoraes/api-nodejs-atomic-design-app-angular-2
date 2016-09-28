@@ -1,5 +1,5 @@
 const GithubStrategy = require('passport-github').Strategy;
-const configAuth = require('../modules/User/atomic/hadrons/hadron-authPassport');
+const configAuth = require('../_hadrons/passwordAuthPassport');
 const githubStrategy = {
 //pull in our app id and secret from our auth.js file
   clientID        : configAuth.githubAuth.clientID,
