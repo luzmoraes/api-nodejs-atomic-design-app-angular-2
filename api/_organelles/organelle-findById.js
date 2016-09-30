@@ -8,4 +8,4 @@ module.exports = (Organism) => {
     const query = {_id: req};
     Organism.findOne(query, (err, data) => callback(err, data, res));
   }
-}
+};

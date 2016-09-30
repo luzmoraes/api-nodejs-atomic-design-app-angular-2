@@ -38,7 +38,7 @@ router.delete('/:id', (req, res, next) => {
   Controller.remove(req, res);
 });
 // login
-router.post('/login', passport.authenticate('local-login'),function(req, res){
+router.post('/login', passport.authenticate('local-login'), function(req, res){
   res.json(req.user);
   res.end();
 });
