@@ -10,9 +10,14 @@
 		vm.logged = false;
 
 		vm.authenticate = () => {
+			vm.logged = true;
 			AuthenticateService.Login(vm.auth).then(function(response){
-				console.log(response);
-				vm.logged = true;
+				vm.logged = false;
+				if (response.success == false){
+					console.log('Email ou senha inválidos, tente novamente.');
+				}else{
+					location.href = '/dashboard';
+				}
 			});
 		};
 	}

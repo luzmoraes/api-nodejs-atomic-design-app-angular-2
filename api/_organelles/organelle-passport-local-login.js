@@ -3,7 +3,7 @@ const LocalStrategy = require('passport-local').Strategy
 module.exports = (Model) => {
 
   const Strategy = new LocalStrategy({
-    //by default, local strategy uses username and password, we will override with email
+    // Por padrão o local Strategy usa nome de usuário e senha, vamos alterar o nome de usuário pelo email
     usernameField: 'email',
     passwordField: 'password',
     passReqToCallback : true
@@ -17,6 +17,6 @@ module.exports = (Model) => {
       // we are checking to see if the user trying to login already exists
       Model.findOneLogin({'email': email, 'password': password}, done);
     });
-  })
+  });
   return Strategy
 }

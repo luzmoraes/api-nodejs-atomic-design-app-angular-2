@@ -6,7 +6,7 @@
 		.factory('UsersService', UsersService);
 
 	function UsersService($http){
-		const _URI = 'http://localhost:7200';
+		const _URI = 'http://localhost:8080';
 		return {
 			add
 		};

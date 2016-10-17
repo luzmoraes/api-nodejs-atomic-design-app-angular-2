@@ -11,9 +11,7 @@
 		vm.add = () => {
 			if (vm.formAddUser.$valid){
 				delete vm.user.repassword;
-				UsersService
-				.add(vm.user)
-				.success((data) => {
+				UsersService.add(vm.user).success((data) => {
 					alert('Cadastro de usuário realizado com sucesso!');
 					vm.user = '';
 					vm.formAddUser.$setPristine();

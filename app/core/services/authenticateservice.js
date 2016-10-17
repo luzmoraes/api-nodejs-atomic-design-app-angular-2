@@ -6,9 +6,9 @@
 
 	function AuthenticateService($http){
 
-		const _URI = 'http://localhost:7200'
+		const _URI = 'http://localhost:8080'
 		    , services = {
-							Login
+					Login
 		  			, SetCredentials
 		  			, ClearCredentials
 					}
@@ -16,8 +16,18 @@
 
 		return services;
 
-		function Login(data){
-			return $http.post(_URI+'/api/auth/login', user);
+		function Login(user){
+			return $http.post(_URI+'/api/users/login', user)
+                .then(fComplete)
+                .catch(fFailed);
+
+            function fComplete(data, status, headers, config) {
+                return data.data;
+            }
+
+            function fFailed(e) {
+                return {success: false};
+            }
 		}
 
 		function SetCredentials(callback){

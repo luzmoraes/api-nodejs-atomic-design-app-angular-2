@@ -10,12 +10,12 @@
 	<label>Usuário</label><br>
 	<input type="text" name="username" data-ng-model="vm.user.username" placeholder="Informe o usuário" required><br><br>
 	<label>Senha</label><br>
-	<input type="password" name="password" data-ng-model="vm.user.password" placeholder="Senha de acesso" ng-minlength="6" ng-maxlength="20" required>
+	<input type="password" name="password" data-ng-model="vm.user.auth.local.password" placeholder="Senha de acesso" ng-minlength="6" ng-maxlength="20" required>
 	<p ng-show="vm.formAddUser.password.$error.minlength" class="help-block">Informe uma senha com no mínimo 6 caracteres.</p>
 	<p ng-show="vm.formAddUser.password.$error.maxlength" class="help-block">Informe uma senha com no máximo 20 caracteres.</p>
 	<br><br>
 	<label>Repita a senha</label><br>
-	<input type="password" name="repassword" data-ng-model="vm.user.repassword" placeholder="Repita a senha" conf-pass="vm.user.password" required>
+	<input type="password" name="repassword" data-ng-model="vm.user.repassword" placeholder="Repita a senha" conf-pass="vm.user.auth.local.password" required>
 	<p ng-show="vm.formAddUser.repassword.$invalid && !vm.formAddUser.repassword.$pristine">Senhas não conferem.</p>
 	<br><br>
 	<button type="submit" ng-disabled="vm.formAddUser.$invalid">Cadastrar</button>
