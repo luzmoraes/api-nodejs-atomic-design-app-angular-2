@@ -9,7 +9,7 @@ module.exports = (Organism) => {
         return done(null, false, {alert: 'Incorrect username.'}) // req.flash is the way to set flashdata using connect-flash
       //all is well, return successful user.
       if(!user.validPassword(data.password))
-        return done(null, false, {alert: 'Incorrect username.'}); //create the loginMessage and save it to session as flashData
+        return done(null, false, {alert: 'Incorrect password.'}); //create the loginMessage and save it to session as flashData
 
       //all is well, return successful user
       return done(null, user);

@@ -29,9 +29,9 @@ module.exports = (Model) => {
             var newModel = new Model();
 
             //set the user's local credentials
-            newModel.local.email = email;
-            newModel.local.password = newModel.generateHash(password);
-
+            newModel.auth.local.email = email;
+            newModel.auth.local.password = newModel.generateHash(password);
+            console.log('newModel.auth.local.password', newModel.auth.local.password)
             //save the user
             newModel.save(function(err){
                 if(err){
@@ -53,8 +53,9 @@ module.exports = (Model) => {
              // Using 'loginMessage instead of signupMessage because it's used by /connect/local'
            } else {
              var user = req.user;
-             user.local.email = email;
-             user.local.password = user.generateHash(password);
+             user.auth.local.email = email;
+             user.auth.local.password = user.generateHash(password);
+              console.log('user.auth.local.password', user.auth.local.password)
              user.save(function(err){
                if(err)
                 return done(err);

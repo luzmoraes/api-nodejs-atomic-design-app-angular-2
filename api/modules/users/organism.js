@@ -9,7 +9,7 @@
 
 const DNA = {
 	name: 'Users'
-  , organelles: ['findOneLogin']
+  , organelles: ['findOneLogin', 'findByIdDeserializeUser']
 };
 
 const Cell = require('./../../_factories/organism')(DNA);

@@ -11,7 +11,7 @@ const flash        = require('connect-flash');
 const morgan       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
-const session      = require('express-session');
+// const session      = require('express-session');
 const cors         = require('cors');
 const compress     = require('compression');
 const favicon      = require('serve-favicon');
@@ -28,7 +28,9 @@ app.use(favicon(__dirname + '/favicon.ico'));
 
 
 // required for passport
-app.use(session({secret: 'YcloudStartJob'})); //session secret.
+// app.use(session({secret: 'YcloudStartJob'})); //session secret.
+// app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login session
 app.use(flash());
@@ -48,7 +50,6 @@ const createRoutes = (element, index) => {
 
 modules.forEach(createRoutes);
 /* Cria as rotas dinamicamente a partir dos módulos */
-
 
 app.get('/ping', function(req, res, next) {
     console.log(req.body);
